@@ -1,0 +1,6 @@
+{
+  "name": "茗序茶经",
+  "description": "一个高颜值无后端的茶文化查询工具与冲泡模拟器，包含茶百科、智能泡茶计时器和高度互动小游戏。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
