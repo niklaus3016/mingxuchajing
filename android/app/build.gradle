@@ -1,13 +1,26 @@
 apply plugin: 'com.android.application'
 
-// 删除自适应图标配置文件
-task deleteAdaptiveIconConfigs {
+// 删除有问题的资源文件
+task deleteProblematicResources {
     doLast {
         def filesToDelete = [
+            // 自适应图标配置
             'src/main/res/drawable/ic_launcher_background.xml',
             'src/main/res/drawable-v24/ic_launcher_foreground.xml',
             'src/main/res/mipmap-anydpi-v26/ic_launcher.xml',
-            'src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml'
+            'src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml',
+            // 有问题的 splash 图片
+            'src/main/res/drawable/splash.png',
+            'src/main/res/drawable-land-hdpi/splash.png',
+            'src/main/res/drawable-land-mdpi/splash.png',
+            'src/main/res/drawable-land-xhdpi/splash.png',
+            'src/main/res/drawable-land-xxhdpi/splash.png',
+            'src/main/res/drawable-land-xxxhdpi/splash.png',
+            'src/main/res/drawable-port-hdpi/splash.png',
+            'src/main/res/drawable-port-mdpi/splash.png',
+            'src/main/res/drawable-port-xhdpi/splash.png',
+            'src/main/res/drawable-port-xxhdpi/splash.png',
+            'src/main/res/drawable-port-xxxhdpi/splash.png'
         ]
         
         filesToDelete.each { filePath ->
@@ -21,7 +34,7 @@ task deleteAdaptiveIconConfigs {
 }
 
 // 在构建前执行删除任务
-preBuild.dependsOn deleteAdaptiveIconConfigs
+preBuild.dependsOn deleteProblematicResources
 
 android { 
     namespace = "com.mingxuchajing.app" 
