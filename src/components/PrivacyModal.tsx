@@ -188,8 +188,8 @@ export const AgreementModal = ({ onClose, title, content }: {
   title: string, 
   content: React.ReactNode 
 }) => (
-  <div className="fixed inset-0 bg-black/40 backdrop-blur-md flex items-center justify-center p-4 z-[60]">
-    <div className="bg-stone-900 bg-stone-900 rounded-2xl w-full max-w-2xl h-[85vh] overflow-hidden shadow-2xl border border-stone-800 border-stone-800 flex flex-col animate-fade-in">
+  <div className="fixed inset-0 bg-black/50 backdrop-blur-md flex items-center justify-center p-4 z-[60]">
+    <div className="bg-stone-900 bg-stone-900 rounded-2xl w-full max-w-lg h-[65vh] overflow-hidden shadow-2xl border border-stone-800 border-stone-800 flex flex-col animate-fade-in mt-[80px]">
       <div className="flex items-center justify-between px-6 py-4 border-b border-stone-800 border-stone-800 bg-stone-900 bg-stone-900 shrink-0">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-emerald-100 bg-emerald-900/30 text-emerald-700 text-emerald-400 rounded-xl flex items-center justify-center">
@@ -199,7 +199,7 @@ export const AgreementModal = ({ onClose, title, content }: {
         </div>
         <button
           onClick={onClose}
-          className="w-9 h-9 rounded-full bg-stone-100 bg-stone-800 flex items-center justify-center text-stone-400 text-stone-400 active:scale-90 transition-transform hover:bg-stone-200 hover:bg-stone-700"
+          className="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white active:scale-90 transition-transform hover:bg-emerald-500 shadow-md"
         >
           <X size={20} />
         </button>
