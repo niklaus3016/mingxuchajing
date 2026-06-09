@@ -353,7 +353,7 @@ export const MyProfileView: React.FC<MyProfileViewProps> = ({
             
             <div className="flex justify-center mb-1">
               <div className="w-16 h-16 rounded-2xl bg-emerald-50 bg-emerald-950/20 text-emerald-700 text-emerald-400 flex items-center justify-center font-serif text-3xl font-extrabold shadow-3xs border border-emerald-100 border-emerald-900/60">
-                学
+                茶
               </div>
             </div>
 
