@@ -91,9 +91,14 @@ export default function App() {
   const [settings, setSettings] = useState<UserSettings>(() => {
     try {
       const cached = localStorage.getItem('mx_settings');
-      return cached ? JSON.parse(cached) : { soundEnabled: true, theme: 'light' };
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        // 强制使用深色模式
+        return { ...parsed, theme: 'dark' };
+      }
+      return { soundEnabled: true, theme: 'dark' };
     } catch {
-      return { soundEnabled: true, theme: 'light' };
+      return { soundEnabled: true, theme: 'dark' };
     }
   });
 
@@ -240,25 +245,25 @@ export default function App() {
   return (
     <div className="dark" id="app_root_theme_wrapper">
       <div 
-        className="min-h-screen font-sans antialiased text-stone-800 dark:text-stone-200 bg-stone-50 dark:bg-stone-950 transition-colors duration-300 flex flex-col justify-between"
+        className="min-h-screen font-sans antialiased text-stone-200 bg-stone-950 flex flex-col justify-between"
         id="app_main_canvas"
       >
         
         {/* 🏷️ Top Global Branding Header Bar */}
         <header 
-          className="sticky top-0 z-40 bg-white/80 dark:bg-stone-900/80 backdrop-blur-md border-b border-stone-200/50 dark:border-stone-850 px-6 py-3.5 flex justify-between items-center"
+          className="sticky top-0 z-30 bg-stone-900/80 backdrop-blur-md border-b border-stone-850 px-6 py-3.5 flex justify-between items-center"
           id="global_header"
         >
           <div className="flex items-center gap-2">
-            <div className="p-1.5 bg-emerald-700 dark:bg-emerald-600 text-white rounded-lg flex items-center justify-center shadow-3xs">
+            <div className="p-1.5 bg-emerald-600 text-white rounded-lg flex items-center justify-center shadow-3xs">
               <Coffee className="w-4 h-4" />
             </div>
-            <span className="font-serif text-lg font-bold tracking-widest text-stone-900 dark:text-stone-105">
+            <span className="font-serif text-lg font-bold tracking-widest text-stone-100">
               茗序茶经
             </span>
           </div>
 
-          <div className="text-[10px] font-medium font-serif text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/30 px-2.5 py-1 rounded-full">
+          <div className="text-[10px] font-medium font-serif text-emerald-400 bg-emerald-950/30 px-2.5 py-1 rounded-full">
             茗香有序 · 茶经随心
           </div>
         </header>
@@ -330,7 +335,7 @@ export default function App() {
 
         {/* 📱 Bottom Fixed Navigation Menu Bar (4 fixed tabs) */}
         <nav 
-          className="fixed bottom-0 left-0 right-0 mx-auto max-w-2xl z-40 bg-white/95 dark:bg-stone-900/98 backdrop-blur-md border-t border-stone-200/60 dark:border-stone-850 px-4 py-2.5 flex justify-around shadow-lg rounded-t-2xl"
+          className="fixed bottom-0 left-0 right-0 mx-auto max-w-2xl z-40 bg-stone-900/98 backdrop-blur-md border-t border-stone-850 px-4 py-2.5 flex justify-around shadow-lg rounded-t-2xl"
           id="global_bottom_navigation"
         >
           {[
@@ -347,12 +352,12 @@ export default function App() {
                 onClick={() => handleNavigate(tab.id as any)}
                 className={`flex flex-col items-center justify-center gap-1 py-1.5 px-3 rounded-xl transition-all duration-300 active:scale-90 ${
                   matched
-                    ? 'text-emerald-700 dark:text-emerald-400 bg-emerald-500/5 dark:bg-emerald-400/5 font-semibold'
-                    : 'text-stone-400 dark:text-stone-500 hover:text-stone-600 dark:hover:text-stone-300'
+                    ? 'text-emerald-400 bg-emerald-400/5 font-semibold'
+                    : 'text-stone-500 hover:text-stone-300'
                 }`}
                 id={`nav_btn_${tab.id}`}
               >
-                <IconComponent className={`w-4.5 h-4.5 transition-transform duration-300 ${matched ? 'scale-115 text-emerald-700 dark:text-emerald-400' : ''}`} />
+                <IconComponent className={`w-4.5 h-4.5 transition-transform duration-300 ${matched ? 'scale-115 text-emerald-400' : ''}`} />
                 <span className="text-[10px] tracking-wide">{tab.label}</span>
               </button>
             );

@@ -312,10 +312,10 @@ export const GameView: React.FC<GameViewProps> = ({
 
   // Color mappings
   const ratingThemes = {
-    '完美': { bg: 'bg-emerald-50 dark:bg-emerald-950/20', text: 'text-emerald-700 dark:text-emerald-400', border: 'border-emerald-250', shadow: 'shadow-emerald-100/40 text-emerald-600' },
-    '良好': { bg: 'bg-teal-50 dark:bg-teal-950/20', text: 'text-teal-750 dark:text-teal-400', border: 'border-teal-200', shadow: 'shadow-teal-100/40 text-teal-600' },
-    '一般': { bg: 'bg-amber-50 dark:bg-amber-950/20', text: 'text-amber-700 dark:text-amber-400', border: 'border-amber-250', shadow: 'shadow-amber-100/40 text-amber-600' },
-    '略有失误': { bg: 'bg-rose-50 dark:bg-rose-950/20', text: 'text-rose-700 dark:text-rose-400', border: 'border-rose-250', shadow: 'shadow-rose-100/40 text-rose-600' },
+    '完美': { bg: 'bg-emerald-50 bg-emerald-950/20', text: 'text-emerald-700 text-emerald-400', border: 'border-emerald-250', shadow: 'shadow-emerald-100/40 text-emerald-600' },
+    '良好': { bg: 'bg-teal-50 bg-teal-950/20', text: 'text-teal-750 text-teal-400', border: 'border-teal-200', shadow: 'shadow-teal-100/40 text-teal-600' },
+    '一般': { bg: 'bg-amber-50 bg-amber-950/20', text: 'text-amber-700 text-amber-400', border: 'border-amber-250', shadow: 'shadow-amber-100/40 text-amber-600' },
+    '略有失误': { bg: 'bg-rose-50 bg-rose-950/20', text: 'text-rose-700 text-rose-400', border: 'border-rose-250', shadow: 'shadow-rose-100/40 text-rose-600' },
   };
 
   const activeTheme = gameResult ? ratingThemes[gameResult.rating] : ratingThemes['一般'];
@@ -325,13 +325,13 @@ export const GameView: React.FC<GameViewProps> = ({
       
       {/* Header Banner */}
       <div>
-        <h2 className="font-serif text-xl font-bold text-stone-900 dark:text-stone-100 flex items-center gap-1.5">
+        <h2 className="font-serif text-xl font-bold text-stone-100 text-stone-100 flex items-center gap-1.5">
           <span>茶圣试炼场</span>
-          <span className="text-xs font-sans font-normal text-teal-800 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/30 px-2 py-0.5 rounded">
+          <span className="text-xs font-sans font-normal text-teal-800 text-teal-400 bg-teal-50 bg-teal-950/30 px-2 py-0.5 rounded">
             泡茶模拟小游戏
           </span>
         </h2>
-        <p className="text-xs text-stone-500 dark:text-stone-400 mt-1">
+        <p className="text-xs text-stone-400 text-stone-400 mt-1">
           遵循中国古法仪式标准，手动操刀调配参数。一招一式计算融汇契合度，斩获茶道宗师头衔。
         </p>
       </div>
@@ -341,9 +341,9 @@ export const GameView: React.FC<GameViewProps> = ({
          ========================================================================= */}
       {currentStep === 'tea' && (
         <div className="space-y-4 animate-fade-in" id="game_step_tea">
-          <div className="p-3 bg-stone-100/55 dark:bg-stone-900/60 rounded-xl border border-stone-200/50 flex items-center gap-2 text-xs">
-            <span className="font-bold text-center bg-stone-200 dark:bg-stone-800 rounded-full w-5 h-5 flex items-center justify-center text-stone-700 dark:text-stone-300">1</span>
-            <span className="text-stone-600 dark:text-stone-400">第一折：选择您打算参悟或冲洗的干茶</span>
+          <div className="p-3 bg-stone-100/55 bg-stone-900/60 rounded-xl border border-stone-200/50 flex items-center gap-2 text-xs">
+            <span className="font-bold text-center bg-stone-200 bg-stone-800 rounded-full w-5 h-5 flex items-center justify-center text-stone-300 text-stone-300">1</span>
+            <span className="text-stone-400 text-stone-400">第一折：选择您打算参悟或冲洗的干茶</span>
           </div>
 
           <div className="grid grid-cols-2 gap-2" id="game_tea_selection_grid">
@@ -364,13 +364,13 @@ export const GameView: React.FC<GameViewProps> = ({
                   }}
                   className={`p-3.5 rounded-xl border text-left transition-all duration-200 select-none ${
                     matches
-                      ? 'bg-emerald-50 dark:bg-emerald-950/20 border-emerald-500 text-stone-900 dark:text-stone-100 ring-1 ring-emerald-500/10'
-                      : 'bg-white dark:bg-stone-900 border-stone-150 dark:border-stone-805 text-stone-600 dark:text-stone-400 hover:bg-stone-50'
+                      ? 'bg-emerald-50 bg-emerald-950/20 border-emerald-500 text-stone-100 text-stone-100 ring-1 ring-emerald-500/10'
+                      : 'bg-stone-900 bg-stone-900 border-stone-800 border-stone-805 text-stone-400 text-stone-400 hover:bg-stone-950'
                   }`}
                 >
-                  <p className="text-[10px] font-mono text-emerald-700 dark:text-emerald-400 mb-0.5">{tea.category}</p>
+                  <p className="text-[10px] font-mono text-emerald-700 text-emerald-400 mb-0.5">{tea.category}</p>
                   <p className="font-serif font-bold text-sm tracking-wide">{tea.name}</p>
-                  <p className="text-[10px] text-stone-400 dark:text-stone-500 mt-1 line-clamp-1 truncate">{tea.brief}</p>
+                  <p className="text-[10px] text-stone-400 text-stone-400 mt-1 line-clamp-1 truncate">{tea.brief}</p>
                 </button>
               );
             })}
@@ -379,7 +379,7 @@ export const GameView: React.FC<GameViewProps> = ({
           <div className="pt-4 flex justify-end">
             <button
               onClick={handleNextStep}
-              className="px-6 py-2.5 rounded-xl bg-emerald-700 dark:bg-emerald-600 text-white font-semibold text-xs flex items-center gap-1.5 active:scale-95 shadow-sm transition-all"
+              className="px-6 py-2.5 rounded-xl bg-emerald-700 bg-emerald-600 text-white font-semibold text-xs flex items-center gap-1.5 active:scale-95 shadow-sm transition-all"
             >
               下一步：选名器
               <ChevronRight className="w-4 h-4" />
@@ -393,9 +393,9 @@ export const GameView: React.FC<GameViewProps> = ({
          ========================================================================= */}
       {currentStep === 'utensil' && (
         <div className="space-y-4 animate-fade-in" id="game_step_utensil">
-          <div className="p-3 bg-stone-100/55 dark:bg-stone-900/60 rounded-xl border border-stone-200/50 flex items-center gap-2 text-xs">
-            <span className="font-bold text-center bg-stone-200 dark:bg-stone-800 rounded-full w-5 h-5 flex items-center justify-center text-stone-700 dark:text-stone-300">2</span>
-            <span className="text-stone-600 dark:text-stone-300">第二折：挑选这泡【{selectedTea.name}】的冲泡器具</span>
+          <div className="p-3 bg-stone-100/55 bg-stone-900/60 rounded-xl border border-stone-200/50 flex items-center gap-2 text-xs">
+            <span className="font-bold text-center bg-stone-200 bg-stone-800 rounded-full w-5 h-5 flex items-center justify-center text-stone-300 text-stone-300">2</span>
+            <span className="text-stone-400 text-stone-300">第二折：挑选这泡【{selectedTea.name}】的冲泡器具</span>
           </div>
 
           <div className="grid grid-cols-1 gap-2.5" id="game_utensil_selection_grid">
@@ -414,15 +414,15 @@ export const GameView: React.FC<GameViewProps> = ({
                   }}
                   className={`p-4 rounded-xl border text-left transition-all duration-200 flex justify-between items-center ${
                     matched
-                      ? 'bg-emerald-50 dark:bg-emerald-950/20 border-emerald-500 text-stone-900 dark:text-stone-100'
-                      : 'bg-white dark:bg-stone-900 border-stone-150 dark:border-stone-800 text-stone-605 dark:text-stone-400 hover:bg-stone-50'
+                      ? 'bg-emerald-50 bg-emerald-950/20 border-emerald-500 text-stone-100 text-stone-100'
+                      : 'bg-stone-900 bg-stone-900 border-stone-800 border-stone-800 text-stone-605 text-stone-400 hover:bg-stone-950'
                   }`}
                 >
                   <div className="space-y-1">
                     <p className="font-serif font-bold text-sm">{ut.name}</p>
-                    <p className="text-[11px] text-stone-400 dark:text-stone-500 max-w-sm">{ut.desc}</p>
+                    <p className="text-[11px] text-stone-400 text-stone-400 max-w-sm">{ut.desc}</p>
                   </div>
-                  {matched && <CheckCircle className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />}
+                  {matched && <CheckCircle className="w-5 h-5 text-emerald-600 text-emerald-400 shrink-0" />}
                 </button>
               );
             })}
@@ -431,14 +431,14 @@ export const GameView: React.FC<GameViewProps> = ({
           <div className="pt-4 flex justify-between">
             <button
               onClick={handlePrevStep}
-              className="px-5 py-2.5 rounded-xl border border-stone-200 dark:border-stone-800 text-stone-605 text-xs flex items-center gap-1 active:scale-95 transition-all"
+              className="px-5 py-2.5 rounded-xl border border-stone-800 border-stone-800 text-stone-605 text-xs flex items-center gap-1 active:scale-95 transition-all"
             >
               <ChevronLeft className="w-4 h-4" />
               返回
             </button>
             <button
               onClick={handleNextStep}
-              className="px-6 py-2.5 rounded-xl bg-emerald-700 dark:bg-emerald-600 text-white font-semibold text-xs flex items-center gap-1.5 active:scale-95 shadow-sm transition-all"
+              className="px-6 py-2.5 rounded-xl bg-emerald-700 bg-emerald-600 text-white font-semibold text-xs flex items-center gap-1.5 active:scale-95 shadow-sm transition-all"
             >
               下一步：调水温
               <ChevronRight className="w-4 h-4" />
@@ -452,16 +452,16 @@ export const GameView: React.FC<GameViewProps> = ({
          ========================================================================= */}
       {currentStep === 'temp' && (
         <div className="space-y-5 animate-fade-in" id="game_step_temp">
-          <div className="p-3 bg-stone-100/55 dark:bg-stone-900/60 rounded-xl border border-stone-200/50 flex items-center gap-2 text-xs">
-            <span className="font-bold text-center bg-stone-200 dark:bg-stone-800 rounded-full w-5 h-5 flex items-center justify-center text-stone-700 dark:text-stone-300">3</span>
-            <span className="text-stone-600 dark:text-stone-300">第三折：煮水温控度数设定</span>
+          <div className="p-3 bg-stone-100/55 bg-stone-900/60 rounded-xl border border-stone-200/50 flex items-center gap-2 text-xs">
+            <span className="font-bold text-center bg-stone-200 bg-stone-800 rounded-full w-5 h-5 flex items-center justify-center text-stone-300 text-stone-300">3</span>
+            <span className="text-stone-400 text-stone-300">第三折：煮水温控度数设定</span>
           </div>
 
           {/* Dial controller style slider */}
-          <div className="p-6 rounded-xl bg-white dark:bg-stone-900 border border-stone-150 dark:border-stone-800 space-y-6 text-center">
+          <div className="p-6 rounded-xl bg-stone-900 bg-stone-900 border border-stone-800 border-stone-800 space-y-6 text-center">
             <div className="space-y-1">
-              <span className="text-stone-400 dark:text-stone-350 text-xs font-semibold">选定水温</span>
-              <div className="text-4xl font-mono font-extrabold text-amber-600 dark:text-amber-400 flex items-center justify-center gap-1">
+              <span className="text-stone-400 text-stone-350 text-xs font-semibold">选定水温</span>
+              <div className="text-4xl font-mono font-extrabold text-amber-600 text-amber-400 flex items-center justify-center gap-1">
                 <Flame className="w-8 h-8 text-amber-500 animate-pulse" />
                 <span>{selectedTemp}°C</span>
               </div>
@@ -476,16 +476,16 @@ export const GameView: React.FC<GameViewProps> = ({
                 step="1"
                 value={selectedTemp}
                 onChange={(e) => setSelectedTemp(Number(e.target.value))}
-                className="w-full h-2 bg-stone-100 dark:bg-stone-950 rounded-full appearance-none cursor-pointer accent-emerald-600 dark:accent-emerald-400"
+                className="w-full h-2 bg-stone-100 bg-stone-950 rounded-full appearance-none cursor-pointer accent-emerald-600 accent-emerald-400"
               />
-              <div className="flex justify-between text-[11px] font-mono text-stone-400 dark:text-stone-350">
+              <div className="flex justify-between text-[11px] font-mono text-stone-400 text-stone-350">
                 <span>70°C (松针嫩芽最低)</span>
                 <span>85°C</span>
                 <span>100°C (老陈茶沸水)</span>
               </div>
             </div>
 
-            <div className="flex justify-center text-[11px] text-stone-500 bg-stone-50 dark:bg-stone-950 p-2 text-left rounded-lg gap-2">
+            <div className="flex justify-center text-[11px] text-stone-400 bg-stone-950 bg-stone-950 p-2 text-left rounded-lg gap-2">
               <Lightbulb className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
               <span>
                 温馨提示：【{selectedTea.name}】属【{selectedTea.category}】，其茶叶娇嫩度/发酵程度决定了最佳水温度数。标准推荐水温在 {selectedTea.brewing.tempMin}-{selectedTea.brewing.tempMax}°C 之间。
@@ -496,14 +496,14 @@ export const GameView: React.FC<GameViewProps> = ({
           <div className="pt-4 flex justify-between">
             <button
               onClick={handlePrevStep}
-              className="px-5 py-2.5 rounded-xl border border-stone-200 dark:border-stone-800 text-stone-605 text-xs flex items-center gap-1 active:scale-95 transition-all"
+              className="px-5 py-2.5 rounded-xl border border-stone-800 border-stone-800 text-stone-605 text-xs flex items-center gap-1 active:scale-95 transition-all"
             >
               <ChevronLeft className="w-4 h-4" />
               返回
             </button>
             <button
               onClick={handleNextStep}
-              className="px-6 py-2.5 rounded-xl bg-emerald-700 dark:bg-emerald-600 text-white font-semibold text-xs flex items-center gap-1.5 active:scale-95 shadow-sm transition-all"
+              className="px-6 py-2.5 rounded-xl bg-emerald-700 bg-emerald-600 text-white font-semibold text-xs flex items-center gap-1.5 active:scale-95 shadow-sm transition-all"
             >
               下一步：量茶入瓮
               <ChevronRight className="w-4 h-4" />
@@ -517,16 +517,16 @@ export const GameView: React.FC<GameViewProps> = ({
          ========================================================================= */}
       {currentStep === 'amount' && (
         <div className="space-y-4 animate-fade-in" id="game_step_amount">
-          <div className="p-3 bg-stone-100/55 dark:bg-stone-900/60 rounded-xl border border-stone-200/50 flex items-center gap-2 text-xs">
-            <span className="font-bold text-center bg-stone-200 dark:bg-stone-800 rounded-full w-5 h-5 flex items-center justify-center text-stone-700 dark:text-stone-300">4</span>
-            <span className="text-stone-600 dark:text-stone-350">第四折：确定投放多少克茶叶 (投茶量)</span>
+          <div className="p-3 bg-stone-100/55 bg-stone-900/60 rounded-xl border border-stone-200/50 flex items-center gap-2 text-xs">
+            <span className="font-bold text-center bg-stone-200 bg-stone-800 rounded-full w-5 h-5 flex items-center justify-center text-stone-300 text-stone-300">4</span>
+            <span className="text-stone-400 text-stone-350">第四折：确定投放多少克茶叶 (投茶量)</span>
           </div>
 
-          <div className="p-6 rounded-xl bg-white dark:bg-stone-900 border border-stone-150 dark:border-stone-800 text-center space-y-6">
+          <div className="p-6 rounded-xl bg-stone-900 bg-stone-900 border border-stone-800 border-stone-800 text-center space-y-6">
             <div className="space-y-1">
-              <span className="text-stone-400 dark:text-stone-350 text-xs font-semibold">茶称秤重（克重）</span>
-              <p className="text-4xl font-mono font-extrabold text-stone-850 dark:text-stone-100 flex items-center justify-center gap-1">
-                <Scale className="w-7 h-7 text-stone-500" />
+              <span className="text-stone-400 text-stone-350 text-xs font-semibold">茶称秤重（克重）</span>
+              <p className="text-4xl font-mono font-extrabold text-stone-100 text-stone-100 flex items-center justify-center gap-1">
+                <Scale className="w-7 h-7 text-stone-400" />
                 <span>{selectedAmount} 克 (g)</span>
               </p>
             </div>
@@ -544,8 +544,8 @@ export const GameView: React.FC<GameViewProps> = ({
                     }}
                     className={`py-2 rounded-lg border text-xs font-semibold font-mono transition-all ${
                       isSelected
-                        ? 'bg-emerald-50 dark:bg-emerald-950/20 border-emerald-500 text-emerald-800 dark:text-emerald-400 font-extrabold'
-                        : 'bg-white dark:bg-stone-900 border-stone-150 dark:border-stone-800 text-stone-500 dark:text-stone-400 hover:bg-stone-50'
+                        ? 'bg-emerald-50 bg-emerald-950/20 border-emerald-500 text-emerald-800 text-emerald-400 font-extrabold'
+                        : 'bg-stone-900 bg-stone-900 border-stone-800 border-stone-800 text-stone-400 text-stone-400 hover:bg-stone-950'
                     }`}
                   >
                     {amt} 克
@@ -562,10 +562,10 @@ export const GameView: React.FC<GameViewProps> = ({
               step="1"
               value={selectedAmount}
               onChange={(e) => setSelectedAmount(Number(e.target.value))}
-              className="w-full h-2 bg-stone-100 dark:bg-stone-950 rounded-full appearance-none cursor-pointer accent-emerald-600 dark:accent-emerald-400"
+              className="w-full h-2 bg-stone-100 bg-stone-950 rounded-full appearance-none cursor-pointer accent-emerald-600 accent-emerald-400"
             />
 
-            <div className="text-[11px] text-stone-500 bg-stone-50 dark:bg-stone-950 p-2 text-left rounded-lg">
+            <div className="text-[11px] text-stone-400 bg-stone-950 bg-stone-950 p-2 text-left rounded-lg">
               标准官方对标量：【{selectedTea.name}】官方标准推荐投茶克重大约为 【{selectedTea.brewing.teaAmount}】 (适配茶水比【{selectedTea.brewing.teaWaterRatio}】)。
             </div>
           </div>
@@ -573,14 +573,14 @@ export const GameView: React.FC<GameViewProps> = ({
           <div className="pt-4 flex justify-between">
             <button
               onClick={handlePrevStep}
-              className="px-5 py-2.5 rounded-xl border border-stone-200 dark:border-stone-800 text-stone-605 text-xs flex items-center gap-1 active:scale-95 transition-all"
+              className="px-5 py-2.5 rounded-xl border border-stone-800 border-stone-800 text-stone-605 text-xs flex items-center gap-1 active:scale-95 transition-all"
             >
               <ChevronLeft className="w-4 h-4" />
               返回
             </button>
             <button
               onClick={handleNextStep}
-              className="px-6 py-2.5 rounded-xl bg-emerald-700 dark:bg-emerald-600 text-white font-semibold text-xs flex items-center gap-1.5 active:scale-95 shadow-sm transition-all"
+              className="px-6 py-2.5 rounded-xl bg-emerald-700 bg-emerald-600 text-white font-semibold text-xs flex items-center gap-1.5 active:scale-95 shadow-sm transition-all"
             >
               下一步：选时冲洗
               <ChevronRight className="w-4 h-4" />
@@ -594,16 +594,16 @@ export const GameView: React.FC<GameViewProps> = ({
          ========================================================================= */}
       {currentStep === 'duration' && (
         <div className="space-y-4 animate-fade-in" id="game_step_duration">
-          <div className="p-3 bg-stone-100/55 dark:bg-stone-900/60 rounded-xl border border-stone-200/50 flex items-center gap-2 text-xs">
-            <span className="font-bold text-center bg-stone-200 dark:bg-stone-800 rounded-full w-5 h-5 flex items-center justify-center text-stone-700 dark:text-stone-300">5</span>
-            <span className="text-stone-600 dark:text-stone-350">第五折：落水滚沸后，闷润静待时长 (浸泡秒数)</span>
+          <div className="p-3 bg-stone-100/55 bg-stone-900/60 rounded-xl border border-stone-200/50 flex items-center gap-2 text-xs">
+            <span className="font-bold text-center bg-stone-200 bg-stone-800 rounded-full w-5 h-5 flex items-center justify-center text-stone-300 text-stone-300">5</span>
+            <span className="text-stone-400 text-stone-350">第五折：落水滚沸后，闷润静待时长 (浸泡秒数)</span>
           </div>
 
-          <div className="p-6 rounded-xl bg-white dark:bg-stone-900 border border-stone-150 dark:border-stone-800 text-center space-y-6">
+          <div className="p-6 rounded-xl bg-stone-900 bg-stone-900 border border-stone-800 border-stone-800 text-center space-y-6">
             <div className="space-y-1">
-              <span className="text-stone-400 dark:text-stone-350 text-xs font-semibold">闷汤时钟</span>
-              <p className="text-4xl font-mono font-extrabold text-stone-850 dark:text-stone-100 flex items-center justify-center gap-1">
-                <Clock className="w-7 h-7 text-stone-500" />
+              <span className="text-stone-400 text-stone-350 text-xs font-semibold">闷汤时钟</span>
+              <p className="text-4xl font-mono font-extrabold text-stone-100 text-stone-100 flex items-center justify-center gap-1">
+                <Clock className="w-7 h-7 text-stone-400" />
                 <span>{selectedDuration} 秒 (s)</span>
               </p>
             </div>
@@ -621,8 +621,8 @@ export const GameView: React.FC<GameViewProps> = ({
                     }}
                     className={`py-2 rounded-lg border text-xs font-semibold font-mono transition-all ${
                       isSelected
-                        ? 'bg-emerald-50 dark:bg-emerald-950/20 border-emerald-500 text-emerald-800 dark:text-emerald-400 font-extrabold'
-                        : 'bg-white dark:bg-stone-900 border-stone-150 dark:border-stone-800 text-stone-500 dark:text-stone-400 hover:bg-stone-50'
+                        ? 'bg-emerald-50 bg-emerald-950/20 border-emerald-500 text-emerald-800 text-emerald-400 font-extrabold'
+                        : 'bg-stone-900 bg-stone-900 border-stone-800 border-stone-800 text-stone-400 text-stone-400 hover:bg-stone-950'
                     }`}
                   >
                     {sec} 秒
@@ -638,10 +638,10 @@ export const GameView: React.FC<GameViewProps> = ({
               step="1"
               value={selectedDuration}
               onChange={(e) => setSelectedDuration(Number(e.target.value))}
-              className="w-full h-2 bg-stone-100 dark:bg-stone-950 rounded-full appearance-none cursor-pointer accent-emerald-600 dark:accent-emerald-400"
+              className="w-full h-2 bg-stone-100 bg-stone-950 rounded-full appearance-none cursor-pointer accent-emerald-600 accent-emerald-400"
             />
 
-            <div className="text-[11px] text-stone-500 bg-stone-50 dark:bg-stone-950 p-2 text-left rounded-lg">
+            <div className="text-[11px] text-stone-400 bg-stone-950 bg-stone-950 p-2 text-left rounded-lg">
               第一泡标准常数指南：【{selectedTea.name}】官方大典推荐的第 1 泡闷出时长为 【{selectedTea.brewing.steepTimes[0]}】 秒。
             </div>
           </div>
@@ -649,7 +649,7 @@ export const GameView: React.FC<GameViewProps> = ({
           <div className="pt-4 flex justify-between">
             <button
               onClick={handlePrevStep}
-              className="px-5 py-2.5 rounded-xl border border-stone-200 dark:border-stone-800 text-stone-605 text-xs flex items-center gap-1 active:scale-95 transition-all"
+              className="px-5 py-2.5 rounded-xl border border-stone-800 border-stone-800 text-stone-605 text-xs flex items-center gap-1 active:scale-95 transition-all"
             >
               <ChevronLeft className="w-4 h-4" />
               返回
@@ -670,36 +670,36 @@ export const GameView: React.FC<GameViewProps> = ({
          STEP 6: BREWING ANIMATION SCREEN (开始冲泡过程)
          ========================================================================= */}
       {currentStep === 'brewing' && (
-        <div className="p-8 rounded-2xl bg-white dark:bg-stone-900 border border-stone-105 dark:border-stone-805 shadow-md flex flex-col items-center justify-center text-center space-y-6 min-h-[300px] animate-fade-in" id="game_step_brewing">
+        <div className="p-8 rounded-2xl bg-stone-900 bg-stone-900 border border-stone-105 border-stone-805 shadow-md flex flex-col items-center justify-center text-center space-y-6 min-h-[300px] animate-fade-in" id="game_step_brewing">
           {/* Bubbles splashing liquid graphic container */}
           <div className="relative w-36 h-36 flex items-center justify-center" id="animation_container">
             
             {/* Animated Tea and Water pouring lines */}
-            <div className="absolute inset-0 border-4 border-emerald-500/10 dark:border-emerald-400/10 rounded-full flex items-center justify-center overflow-hidden">
+            <div className="absolute inset-0 border-4 border-emerald-500/10 border-emerald-400/10 rounded-full flex items-center justify-center overflow-hidden">
               <div 
-                className="absolute bottom-0 left-0 right-0 bg-emerald-700/15 dark:bg-emerald-600/20 transition-all duration-300 rounded-lg flex items-center justify-center"
+                className="absolute bottom-0 left-0 right-0 bg-emerald-700/15 bg-emerald-600/20 transition-all duration-300 rounded-lg flex items-center justify-center"
                 style={{ height: `${brewProgress}%` }}
               >
                 {/* Rolling water leaves */}
-                <div className="text-xs text-emerald-600 dark:text-emerald-305 opacity-50 font-serif absolute inset-0 flex flex-wrap gap-4 items-center justify-center p-3 animate-pulse">
+                <div className="text-xs text-emerald-600 text-emerald-305 opacity-50 font-serif absolute inset-0 flex flex-wrap gap-4 items-center justify-center p-3 animate-pulse">
                   <span>🍃</span><span>🌱</span><span>🍂</span><span>🌿</span>
                 </div>
               </div>
             </div>
 
-            <Coffee className="w-16 h-16 text-emerald-700/80 dark:text-emerald-400/80 animate-bounce" />
+            <Coffee className="w-16 h-16 text-emerald-700/80 text-emerald-400/80 animate-bounce" />
           </div>
 
           <div className="space-y-1">
-            <h3 className="font-serif text-lg font-bold text-stone-850 dark:text-stone-100 animate-pulse">
+            <h3 className="font-serif text-lg font-bold text-stone-100 text-stone-100 animate-pulse">
               一叶浮沉，时光升华...
             </h3>
-            <p className="text-xs text-stone-400 dark:text-stone-500 max-w-sm">
+            <p className="text-xs text-stone-400 text-stone-400 max-w-sm">
               正在注入 {selectedTemp}°C 山泉沸水盛满 【{selectedUtensil}】 之中。共投放极鲜干茶 {selectedAmount}g。深度析出中，闷泡历时 {selectedDuration}s。
             </p>
           </div>
 
-          <div className="w-full max-w-xs bg-stone-100 dark:bg-stone-950 h-1.5 rounded-full overflow-hidden">
+          <div className="w-full max-w-xs bg-stone-100 bg-stone-950 h-1.5 rounded-full overflow-hidden">
             <div 
               className="bg-emerald-600 h-full"
               style={{ width: `${brewProgress}%` }}
@@ -734,76 +734,76 @@ export const GameView: React.FC<GameViewProps> = ({
                 <span className="text-xs text-stone-400">分</span>
               </div>
 
-              <div className="inline-block px-4 py-1 rounded-full text-sm font-serif font-extrabold tracking-wide uppercase shadow-3xs bg-white dark:bg-stone-900 border mt-3 animate-bounce">
+              <div className="inline-block px-4 py-1 rounded-full text-sm font-serif font-extrabold tracking-wide uppercase shadow-3xs bg-stone-900 bg-stone-900 border mt-3 animate-bounce">
                 等阶：{gameResult.rating}
               </div>
             </div>
 
-            <p className="text-xs leading-relaxed text-stone-800 dark:text-stone-200 font-medium max-w-md mx-auto relative z-10 p-3 bg-white/50 dark:bg-stone-905/45 rounded-xl border border-white/40">
+            <p className="text-xs leading-relaxed text-stone-200 text-stone-200 font-medium max-w-md mx-auto relative z-10 p-3 bg-stone-900/50 bg-stone-905/45 rounded-xl border border-white/40">
               {gameResult.advice}
             </p>
           </div>
 
           {/* Diagnostic Parameter Comparisons Checklist */}
           <div className="space-y-3" id="diagnostics_checklist">
-            <h3 className="font-serif text-sm font-bold text-stone-800 dark:text-stone-150 flex items-center gap-1.5">
+            <h3 className="font-serif text-sm font-bold text-stone-200 text-stone-150 flex items-center gap-1.5">
               <AlertCircle className="w-4.5 h-4.5 text-stone-400" /> 茶学实操诊断细则
             </h3>
 
             <div className="space-y-2 text-xs" id="diagnostics_rows">
               {/* Utensil check */}
-              <div className="p-3 bg-white dark:bg-stone-900 rounded-xl border border-stone-150 dark:border-stone-800 flex gap-3">
-                <div className={`p-2 rounded-lg shrink-0 h-9 w-9 flex items-center justify-center ${selectedUtensil === selectedTea.brewing.preferredUtensil ? 'bg-emerald-50 text-emerald-700' : 'bg-stone-50 text-stone-600'}`}>
+              <div className="p-3 bg-stone-900 bg-stone-900 rounded-xl border border-stone-800 border-stone-800 flex gap-3">
+                <div className={`p-2 rounded-lg shrink-0 h-9 w-9 flex items-center justify-center ${selectedUtensil === selectedTea.brewing.preferredUtensil ? 'bg-emerald-50 text-emerald-700' : 'bg-stone-950 text-stone-400'}`}>
                   <Coffee className="w-4.5 h-4.5" />
                 </div>
                 <div>
                   <div className="flex justify-between items-baseline mb-0.5">
-                    <span className="font-bold text-stone-800 dark:text-stone-300">【茶器调配】: {selectedUtensil}</span>
-                    <span className="text-[10px] text-stone-400 dark:text-stone-500">对标：{selectedTea.brewing.preferredUtensil}</span>
+                    <span className="font-bold text-stone-200 text-stone-300">【茶器调配】: {selectedUtensil}</span>
+                    <span className="text-[10px] text-stone-400 text-stone-400">对标：{selectedTea.brewing.preferredUtensil}</span>
                   </div>
-                  <p className="text-stone-605 dark:text-stone-400 text-[11px] leading-relaxed">{gameResult.utensilMsg}</p>
+                  <p className="text-stone-605 text-stone-400 text-[11px] leading-relaxed">{gameResult.utensilMsg}</p>
                 </div>
               </div>
 
               {/* Temp check */}
-              <div className="p-3 bg-white dark:bg-stone-900 rounded-xl border border-stone-150 dark:border-stone-800 flex gap-3">
-                <div className={`p-2 rounded-lg shrink-0 h-9 w-9 flex items-center justify-center ${(selectedTemp >= selectedTea.brewing.tempMin && selectedTemp <= selectedTea.brewing.tempMax) ? 'bg-emerald-50 text-emerald-700' : 'bg-stone-50 text-stone-600'}`}>
+              <div className="p-3 bg-stone-900 bg-stone-900 rounded-xl border border-stone-800 border-stone-800 flex gap-3">
+                <div className={`p-2 rounded-lg shrink-0 h-9 w-9 flex items-center justify-center ${(selectedTemp >= selectedTea.brewing.tempMin && selectedTemp <= selectedTea.brewing.tempMax) ? 'bg-emerald-50 text-emerald-700' : 'bg-stone-950 text-stone-400'}`}>
                   <Flame className="w-4.5 h-4.5" />
                 </div>
                 <div>
                   <div className="flex justify-between items-baseline mb-0.5">
-                    <span className="font-bold text-stone-800 dark:text-stone-300">【滚水冲温】: {selectedTemp}°C</span>
-                    <span className="text-[10px] text-stone-400 dark:text-stone-500">对标：{selectedTea.brewing.tempMin}-{selectedTea.brewing.tempMax}°C</span>
+                    <span className="font-bold text-stone-200 text-stone-300">【滚水冲温】: {selectedTemp}°C</span>
+                    <span className="text-[10px] text-stone-400 text-stone-400">对标：{selectedTea.brewing.tempMin}-{selectedTea.brewing.tempMax}°C</span>
                   </div>
-                  <p className="text-stone-605 dark:text-stone-400 text-[11px] leading-relaxed">{gameResult.tempMsg}</p>
+                  <p className="text-stone-605 text-stone-400 text-[11px] leading-relaxed">{gameResult.tempMsg}</p>
                 </div>
               </div>
 
               {/* Amount check */}
-              <div className="p-3 bg-white dark:bg-stone-900 rounded-xl border border-stone-150 dark:border-stone-800 flex gap-3">
-                <div className={`p-2 rounded-lg shrink-0 h-9 w-9 flex items-center justify-center ${selectedAmount === (parseInt(selectedTea.brewing.teaAmount) || 5) ? 'bg-emerald-50 text-emerald-700' : 'bg-stone-50 text-stone-600'}`}>
+              <div className="p-3 bg-stone-900 bg-stone-900 rounded-xl border border-stone-800 border-stone-800 flex gap-3">
+                <div className={`p-2 rounded-lg shrink-0 h-9 w-9 flex items-center justify-center ${selectedAmount === (parseInt(selectedTea.brewing.teaAmount) || 5) ? 'bg-emerald-50 text-emerald-700' : 'bg-stone-950 text-stone-400'}`}>
                   <Scale className="w-4.5 h-4.5" />
                 </div>
                 <div>
                   <div className="flex justify-between items-baseline mb-0.5">
-                    <span className="font-bold text-stone-800 dark:text-stone-300">【投定克重】: {selectedAmount}g</span>
-                    <span className="text-[10px] text-stone-400 dark:text-stone-500">对标：{selectedTea.brewing.teaAmount}</span>
+                    <span className="font-bold text-stone-200 text-stone-300">【投定克重】: {selectedAmount}g</span>
+                    <span className="text-[10px] text-stone-400 text-stone-400">对标：{selectedTea.brewing.teaAmount}</span>
                   </div>
-                  <p className="text-stone-605 dark:text-stone-400 text-[11px] leading-relaxed">{gameResult.amountMsg}</p>
+                  <p className="text-stone-605 text-stone-400 text-[11px] leading-relaxed">{gameResult.amountMsg}</p>
                 </div>
               </div>
 
               {/* Duration check */}
-              <div className="p-3 bg-white dark:bg-stone-900 rounded-xl border border-stone-150 dark:border-stone-800 flex gap-3">
-                <div className={`p-2 rounded-lg shrink-0 h-9 w-9 flex items-center justify-center ${Math.abs(selectedDuration - selectedTea.brewing.steepTimes[0]) <= 3 ? 'bg-emerald-50 text-emerald-700' : 'bg-stone-50 text-stone-600'}`}>
+              <div className="p-3 bg-stone-900 bg-stone-900 rounded-xl border border-stone-800 border-stone-800 flex gap-3">
+                <div className={`p-2 rounded-lg shrink-0 h-9 w-9 flex items-center justify-center ${Math.abs(selectedDuration - selectedTea.brewing.steepTimes[0]) <= 3 ? 'bg-emerald-50 text-emerald-700' : 'bg-stone-950 text-stone-400'}`}>
                   <Clock className="w-4.5 h-4.5" />
                 </div>
                 <div>
                   <div className="flex justify-between items-baseline mb-0.5">
-                    <span className="font-bold text-stone-800 dark:text-stone-300">【候出泡时】: {selectedDuration}s</span>
-                    <span className="text-[10px] text-stone-400 dark:text-stone-500">对标：{selectedTea.brewing.steepTimes[0]}s</span>
+                    <span className="font-bold text-stone-200 text-stone-300">【候出泡时】: {selectedDuration}s</span>
+                    <span className="text-[10px] text-stone-400 text-stone-400">对标：{selectedTea.brewing.steepTimes[0]}s</span>
                   </div>
-                  <p className="text-stone-605 dark:text-stone-400 text-[11px] leading-relaxed">{gameResult.durationMsg}</p>
+                  <p className="text-stone-605 text-stone-400 text-[11px] leading-relaxed">{gameResult.durationMsg}</p>
                 </div>
               </div>
             </div>
@@ -816,13 +816,13 @@ export const GameView: React.FC<GameViewProps> = ({
                 playClickSound(settings.soundEnabled);
                 onNavigate('encyclopedia');
               }}
-              className="grow flex items-center justify-center gap-1 py-3 px-4 rounded-xl border border-stone-250 dark:border-stone-800 text-stone-650 bg-white hover:bg-stone-50 font-bold text-xs"
+              className="grow flex items-center justify-center gap-1 py-3 px-4 rounded-xl border border-stone-250 border-stone-800 text-stone-650 bg-stone-900 hover:bg-stone-950 font-bold text-xs"
             >
               浏览其百科百科
             </button>
             <button
               onClick={resetGame}
-              className="grow-[2.5] flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl text-white bg-emerald-700 dark:bg-emerald-600 hover:bg-emerald-800 font-extrabold text-xs shadow-md transition-all active:scale-95"
+              className="grow-[2.5] flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl text-white bg-emerald-700 bg-emerald-600 hover:bg-emerald-800 font-extrabold text-xs shadow-md transition-all active:scale-95"
               id="game_replay_btn"
             >
               <RotateCcw className="w-4 h-4" />

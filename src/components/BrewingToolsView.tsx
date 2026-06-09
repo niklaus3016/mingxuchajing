@@ -190,28 +190,28 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
       
       {/* 🚀 Header */}
       <div>
-        <h2 className="font-serif text-xl font-bold text-stone-900 dark:text-stone-100 flex items-center gap-1.5">
+        <h2 className="font-serif text-xl font-bold text-stone-100 text-stone-100 flex items-center gap-1.5">
           <span>等时光烹茶</span>
-          <span className="text-xs font-sans font-normal text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/30 px-2 py-0.5 rounded">
+          <span className="text-xs font-sans font-normal text-emerald-800 text-emerald-400 bg-emerald-50 bg-emerald-950/30 px-2 py-0.5 rounded">
             实用泡茶工具箱
           </span>
         </h2>
-        <p className="text-xs text-stone-500 dark:text-stone-400 mt-1">
+        <p className="text-xs text-stone-400 text-stone-400 mt-1">
           精准温控、智慧定时、匠人茶器和储新指南，一切皆在手中。
         </p>
       </div>
 
       {/* 🎛️ Navigation Segment Controls */}
       <div 
-        className="grid grid-cols-4 gap-1 p-1 bg-stone-100 dark:bg-stone-900 rounded-xl text-center"
+        className="grid grid-cols-4 gap-1 p-1 bg-stone-100 bg-stone-900 rounded-xl text-center"
         id="tool_sub_tab_navigation"
       >
         <button
           onClick={() => handleSubTabChange('timer')}
           className={`flex flex-col items-center gap-1 py-2 rounded-lg text-xs font-medium transition-all duration-200 ${
             activeSubTab === 'timer'
-              ? 'bg-white dark:bg-stone-800 text-emerald-700 dark:text-emerald-400 shadow-2xs'
-              : 'text-stone-500 dark:text-stone-400 hover:text-stone-800 hover:bg-white/40'
+              ? 'bg-stone-900 bg-stone-800 text-emerald-700 text-emerald-400 shadow-2xs'
+              : 'text-stone-400 text-stone-400 hover:text-stone-200 hover:bg-stone-900/40'
           }`}
           id="btn_subtab_timer"
         >
@@ -223,8 +223,8 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
           onClick={() => handleSubTabChange('temp')}
           className={`flex flex-col items-center gap-1 py-2 rounded-lg text-xs font-medium transition-all duration-200 ${
             activeSubTab === 'temp'
-              ? 'bg-white dark:bg-stone-800 text-amber-700 dark:text-amber-400 shadow-2xs'
-              : 'text-stone-500 dark:text-stone-400 hover:text-stone-850 hover:bg-white/40'
+              ? 'bg-stone-900 bg-stone-800 text-amber-700 text-amber-400 shadow-2xs'
+              : 'text-stone-400 text-stone-400 hover:text-stone-100 hover:bg-stone-900/40'
           }`}
           id="btn_subtab_temp"
         >
@@ -236,8 +236,8 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
           onClick={() => handleSubTabChange('utensils')}
           className={`flex flex-col items-center gap-1 py-2 rounded-lg text-xs font-medium transition-all duration-200 ${
             activeSubTab === 'utensils'
-              ? 'bg-white dark:bg-stone-800 text-teal-700 dark:text-teal-400 shadow-2xs'
-              : 'text-stone-500 dark:text-stone-400 hover:text-stone-850 hover:bg-white/40'
+              ? 'bg-stone-900 bg-stone-800 text-teal-700 text-teal-400 shadow-2xs'
+              : 'text-stone-400 text-stone-400 hover:text-stone-100 hover:bg-stone-900/40'
           }`}
           id="btn_subtab_utensils"
         >
@@ -249,8 +249,8 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
           onClick={() => handleSubTabChange('storage')}
           className={`flex flex-col items-center gap-1 py-2 rounded-lg text-xs font-medium transition-all duration-200 ${
             activeSubTab === 'storage'
-              ? 'bg-white dark:bg-stone-800 text-orange-700 dark:text-orange-400 shadow-2xs'
-              : 'text-stone-500 dark:text-stone-400 hover:text-stone-850 hover:bg-white/40'
+              ? 'bg-stone-900 bg-stone-800 text-orange-700 text-orange-400 shadow-2xs'
+              : 'text-stone-400 text-stone-400 hover:text-stone-100 hover:bg-stone-900/40'
           }`}
           id="btn_subtab_storage"
         >
@@ -266,8 +266,8 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
         <div className="space-y-5 animate-fade-in" id="timer_panel_container">
           
           {/* Controls: Choose Tea Selector */}
-          <div className="p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-805 space-y-3 shadow-3xs">
-            <label className="block text-xs font-serif font-bold text-stone-700 dark:text-stone-350">
+          <div className="p-4 rounded-xl bg-stone-900 bg-stone-900 border border-stone-800 border-stone-805 space-y-3 shadow-3xs">
+            <label className="block text-xs font-serif font-bold text-stone-300 text-stone-350">
               选择冲泡茶叶品种
             </label>
             <select
@@ -282,7 +282,7 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
                   setIsTimerDone(false);
                 }
               }}
-              className="w-full text-sm py-2 px-3.5 rounded-lg border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-950 text-stone-800 dark:text-stone-150 focus:outline-hidden disabled:opacity-50"
+              className="w-full text-sm py-2 px-3.5 rounded-lg border border-stone-800 border-stone-800 bg-stone-950 bg-stone-950 text-stone-200 text-stone-150 focus:outline-hidden disabled:opacity-50"
               id="timer_tea_selector"
             >
               {TEA_DATABASE.map(tea => (
@@ -295,7 +295,7 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
 
           {/* Quick brew selection index (First, Second, Third, Fourth) */}
           <div className="space-y-2">
-            <span className="block text-xs font-serif font-bold text-stone-700 dark:text-stone-350">
+            <span className="block text-xs font-serif font-bold text-stone-300 text-stone-350">
               当前冲泡轮数 (泡数越长，茶叶溶出度越低，用时加长)
             </span>
             <div className="grid grid-cols-4 gap-2 text-center" id="brew_index_buttons_row">
@@ -309,8 +309,8 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
                     onClick={() => handleQuickBrewSelect(idx)}
                     className={`py-2.5 rounded-xl border transition-all duration-200 flex flex-col items-center justify-center gap-0.5 ${
                       isActive
-                        ? 'bg-emerald-50 dark:bg-emerald-950/30 border-emerald-500 text-emerald-800 dark:text-emerald-400 font-bold'
-                        : 'bg-white dark:bg-stone-900 border-stone-150 dark:border-stone-800 text-stone-500 dark:text-stone-400 hover:bg-stone-50 disabled:opacity-50'
+                        ? 'bg-emerald-50 bg-emerald-950/30 border-emerald-500 text-emerald-800 text-emerald-400 font-bold'
+                        : 'bg-stone-900 bg-stone-900 border-stone-800 border-stone-800 text-stone-400 text-stone-400 hover:bg-stone-950 disabled:opacity-50'
                     }`}
                     id={`btn_brew_index_${idx}`}
                   >
@@ -324,13 +324,13 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
 
           {/* Core Interactive Countdown clock visualization */}
           <div 
-            className="p-6 rounded-2xl bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-805 space-y-6 shadow-sm text-center flex flex-col items-center relative overflow-hidden"
+            className="p-6 rounded-2xl bg-stone-900 bg-stone-900 border border-stone-800 border-stone-805 space-y-6 shadow-sm text-center flex flex-col items-center relative overflow-hidden"
             id="countdown_interactive_container"
           >
             {/* Visual background wavy leaf indicator depending on completion status */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-stone-100 dark:bg-stone-800">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-stone-100 bg-stone-800">
               <div 
-                className="bg-emerald-600 dark:bg-emerald-400 h-full transition-all duration-1000"
+                className="bg-emerald-600 bg-emerald-400 h-full transition-all duration-1000"
                 style={{ width: `${progressPercent}%` }}
               ></div>
             </div>
@@ -340,27 +340,27 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
               
               {/* Steaming floating particles */}
               {isTimerRunning && (
-                <div className="absolute -top-4 w-12 flex justify-around animate-bounce text-emerald-300 dark:text-emerald-500 opacity-60">
-                  <span className="block w-1.5 h-4 bg-emerald-400/30 dark:bg-emerald-400/25 rounded-full animate-pulse"></span>
-                  <span className="block w-1.5 h-6 bg-emerald-500/35 dark:bg-emerald-400/20 rounded-full animate-pulse delay-200"></span>
-                  <span className="block w-1.5 h-4 bg-emerald-400/30 dark:bg-emerald-400/25 rounded-full animate-pulse delay-400"></span>
+                <div className="absolute -top-4 w-12 flex justify-around animate-bounce text-emerald-300 text-emerald-500 opacity-60">
+                  <span className="block w-1.5 h-4 bg-emerald-400/30 bg-emerald-400/25 rounded-full animate-pulse"></span>
+                  <span className="block w-1.5 h-6 bg-emerald-500/35 bg-emerald-400/20 rounded-full animate-pulse delay-200"></span>
+                  <span className="block w-1.5 h-4 bg-emerald-400/30 bg-emerald-400/25 rounded-full animate-pulse delay-400"></span>
                 </div>
               )}
 
               {/* Progress ring or core state circle */}
               <div className={`p-4 rounded-full border-4 flex flex-col items-center justify-center w-36 h-36 border-dashed transition-colors duration-500 ${
                 isTimerRunning 
-                  ? 'border-emerald-500 dark:border-emerald-400 animate-spin-slow' 
+                  ? 'border-emerald-500 border-emerald-400 animate-spin-slow' 
                   : isTimerDone 
                     ? 'border-rose-500 bg-rose-50/20' 
-                    : 'border-stone-200 dark:border-stone-800'
+                    : 'border-stone-800 border-stone-800'
               }`}>
                 {/* Timer text inside center */}
                 <div className="text-center select-none" id="countdown_clock_numbers">
-                  <span className="block font-mono text-4xl font-extrabold text-stone-850 dark:text-stone-100">
+                  <span className="block font-mono text-4xl font-extrabold text-stone-100 text-stone-100">
                     {timeLeft}
                   </span>
-                  <span className="text-[10px] uppercase font-mono tracking-wider text-stone-400 dark:text-stone-350">
+                  <span className="text-[10px] uppercase font-mono tracking-wider text-stone-400 text-stone-350">
                     {isTimerDone ? '茶汤已好' : isTimerRunning ? '萃取中' : '静候开汤'}
                   </span>
                 </div>
@@ -372,17 +372,17 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
               <button
                 disabled={isTimerRunning}
                 onClick={() => handleAdjustTime(-5)}
-                className="flex items-center gap-0.5 px-3 py-1.5 rounded-lg border border-stone-200 dark:border-stone-800 text-stone-600 dark:text-stone-350 hover:bg-stone-50 disabled:opacity-40"
+                className="flex items-center gap-0.5 px-3 py-1.5 rounded-lg border border-stone-800 border-stone-800 text-stone-400 text-stone-350 hover:bg-stone-950 disabled:opacity-40"
               >
                 <Minus className="w-3.5 h-3.5" /> 5s
               </button>
 
-              <span className="text-[11px] text-stone-500 dark:text-stone-350">微调秒数</span>
+              <span className="text-[11px] text-stone-400 text-stone-350">微调秒数</span>
 
               <button
                 disabled={isTimerRunning}
                 onClick={() => handleAdjustTime(5)}
-                className="flex items-center gap-0.5 px-3 py-1.5 rounded-lg border border-stone-200 dark:border-stone-800 text-stone-600 dark:text-stone-350 hover:bg-stone-50 disabled:opacity-40"
+                className="flex items-center gap-0.5 px-3 py-1.5 rounded-lg border border-stone-800 border-stone-800 text-stone-400 text-stone-350 hover:bg-stone-950 disabled:opacity-40"
               >
                 <Plus className="w-3.5 h-3.5" /> 5s
               </button>
@@ -392,7 +392,7 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
             <div className="flex gap-3 justify-center w-full max-w-xs" id="brewing_core_action_buttons">
               <button
                 onClick={handleResetTimer}
-                className="grow flex items-center justify-center gap-1.5 py-3.5 border border-stone-200 dark:border-stone-800 text-stone-700 dark:text-stone-300 font-semibold rounded-xl text-xs hover:bg-stone-100/50 active:scale-95 transition-all"
+                className="grow flex items-center justify-center gap-1.5 py-3.5 border border-stone-800 border-stone-800 text-stone-300 text-stone-300 font-semibold rounded-xl text-xs hover:bg-stone-800/50 active:scale-95 transition-all"
                 id="timer_reset_btn"
               >
                 <RotateCcw className="w-4 h-4" />
@@ -403,10 +403,10 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
                 onClick={handleToggleTimer}
                 className={`grow-[2.5] flex items-center justify-center gap-2 py-3.5 font-bold rounded-xl text-xs active:scale-95 transition-all shadow-sm ${
                   isTimerRunning
-                    ? 'bg-stone-800 dark:bg-stone-700 hover:bg-stone-900 text-white'
+                    ? 'bg-stone-800 bg-stone-700 hover:bg-stone-900 text-white'
                     : isTimerDone
                       ? 'bg-rose-600 hover:bg-rose-700 text-white'
-                      : 'bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white'
+                      : 'bg-emerald-600 hover:bg-emerald-700 bg-emerald-500 hover:bg-emerald-600 text-white'
                 }`}
                 id="timer_primary_action_btn"
               >
@@ -427,7 +427,7 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
             </div>
             
             {/* Quick specifications reminder */}
-            <div className="text-[11px] text-stone-400 dark:text-stone-350 mt-2 italic flex items-center gap-1 bg-stone-50 dark:bg-stone-950/20 px-3.5 py-1.5 rounded-lg">
+            <div className="text-[11px] text-stone-400 text-stone-350 mt-2 italic flex items-center gap-1 bg-stone-950 bg-stone-950/20 px-3.5 py-1.5 rounded-lg">
               <Info className="w-3.5 h-3.5 text-stone-400" />
               <span>本轮标准冲泡常数：投茶约 {selectedTea.brewing.teaAmount} | 适配器皿 【{selectedTea.brewing.preferredUtensil}】 | 水温 {selectedTea.brewing.tempMin}-{selectedTea.brewing.tempMax}°C</span>
             </div>
@@ -440,11 +440,11 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
          ========================================================================= */}
       {activeSubTab === 'temp' && (
         <div className="space-y-4 animate-fade-in" id="temperature_panel_container">
-          <div className="p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-805 space-y-3 shadow-3xs">
-            <h3 className="font-serif text-sm font-bold text-stone-850 dark:text-stone-100 flex items-center gap-1.5">
+          <div className="p-4 rounded-xl bg-stone-900 bg-stone-900 border border-stone-800 border-stone-805 space-y-3 shadow-3xs">
+            <h3 className="font-serif text-sm font-bold text-stone-100 text-stone-100 flex items-center gap-1.5">
               <Thermometer className="w-4.5 h-4.5 text-amber-500" /> 中国全茶科标准冲洗水温对照表
             </h3>
-            <p className="text-xs text-stone-500 leading-relaxed">
+            <p className="text-xs text-stone-400 leading-relaxed">
               水温的高低对茶叶生化合物析出速度及多酚氧化反应有绝对性作用。低温（75-85°C）护持嫩叶鲜爽，高温（95-100°C）穿透坚韧，老成茶香随之绽放。
             </p>
           </div>
@@ -462,21 +462,21 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
                     playClickSound(settings.soundEnabled);
                     onSelectTeaEncyclopedia(tea.id);
                   }}
-                  className="cursor-pointer group flex flex-col p-3.5 rounded-xl border border-stone-150 dark:border-stone-800 bg-white dark:bg-stone-900 hover:border-emerald-600/20 hover:shadow-2xs transition-all duration-200"
+                  className="cursor-pointer group flex flex-col p-3.5 rounded-xl border border-stone-800 border-stone-800 bg-stone-900 bg-stone-900 hover:border-emerald-600/20 hover:shadow-2xs transition-all duration-200"
                   id={`temp_guide_row_${tea.id}`}
                 >
                   <div className="flex justify-between items-center mb-1.5">
-                    <span className="font-serif text-xs font-bold text-stone-800 dark:text-stone-200 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 flex items-center gap-1">
+                    <span className="font-serif text-xs font-bold text-stone-200 text-stone-200 group-hover:text-emerald-700 group-hover:text-emerald-400 flex items-center gap-1">
                       {tea.name}
                       <span className="text-[10px] font-sans font-normal text-stone-400">({tea.category})</span>
                     </span>
-                    <span className="font-mono text-xs font-bold text-amber-600 dark:text-amber-400">
+                    <span className="font-mono text-xs font-bold text-amber-600 text-amber-400">
                       {tea.brewing.tempMin}°C - {tea.brewing.tempMax}°C
                     </span>
                   </div>
 
                   {/* Temperature Bar representation */}
-                  <div className="w-full h-2 bg-stone-100 dark:bg-stone-950 rounded-full overflow-hidden relative">
+                  <div className="w-full h-2 bg-stone-100 bg-stone-950 rounded-full overflow-hidden relative">
                     <div 
                       className="absolute top-0 bottom-0 bg-gradient-to-r from-amber-400 to-rose-600 rounded-full"
                       style={{
@@ -486,11 +486,11 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
                     ></div>
                   </div>
 
-                  <div className="flex justify-between text-[9px] text-stone-400 dark:text-stone-350 mt-1.5">
+                  <div className="flex justify-between text-[9px] text-stone-400 text-stone-350 mt-1.5">
                     <span>
                       推荐配比 1 : {tea.brewing.teaWaterRatio.split(':')?.[1] || '50'} ({tea.brewing.teaAmount})
                     </span>
-                    <span className="flex items-center gap-0.5 text-stone-500 dark:text-stone-400 group-hover:text-emerald-700 dark:group-hover:text-emerald-400">
+                    <span className="flex items-center gap-0.5 text-stone-400 text-stone-400 group-hover:text-emerald-700 group-hover:text-emerald-400">
                       查看茶品详情 <ArrowRight className="w-2.5 h-2.5" />
                     </span>
                   </div>
@@ -513,43 +513,43 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
               return (
                 <div
                   key={utensil.id}
-                  className="p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-150 dark:border-stone-800 space-y-3 hover:shadow-2xs transition-all duration-200"
+                  className="p-4 rounded-xl bg-stone-900 bg-stone-900 border border-stone-800 border-stone-800 space-y-3 hover:shadow-2xs transition-all duration-200"
                   id={`utensil_card_${utensil.id}`}
                 >
-                  <div className="flex justify-between items-center border-b border-stone-100 dark:border-stone-850 pb-2">
-                    <h3 className="font-serif text-base font-bold text-stone-900 dark:text-stone-100 flex items-center gap-1.5">
+                  <div className="flex justify-between items-center border-b border-stone-800 border-stone-850 pb-2">
+                    <h3 className="font-serif text-base font-bold text-stone-100 text-stone-100 flex items-center gap-1.5">
                       <span className="w-1.5 h-4 bg-teal-600 rounded-full"></span>
                       {utensil.name}
                     </h3>
-                    <span className="text-[10px] bg-teal-50 dark:bg-teal-950/20 text-teal-800 dark:text-teal-400 border border-teal-200 dark:border-teal-900/30 px-2 py-0.5 rounded font-medium">
+                    <span className="text-[10px] bg-teal-50 bg-teal-950/20 text-teal-800 text-teal-400 border border-teal-200 border-teal-900/30 px-2 py-0.5 rounded font-medium">
                       品茶雅器
                     </span>
                   </div>
 
                   <div className="space-y-2 text-xs">
                     <div>
-                      <p className="font-semibold text-stone-700 dark:text-stone-300">用途主治 / 释义：</p>
-                      <p className="text-stone-605 dark:text-stone-400 leading-relaxed text-[11px] mt-0.5">{utensil.use}</p>
+                      <p className="font-semibold text-stone-300 text-stone-300">用途主治 / 释义：</p>
+                      <p className="text-stone-605 text-stone-400 leading-relaxed text-[11px] mt-0.5">{utensil.use}</p>
                     </div>
 
                     <div>
-                      <p className="font-semibold text-stone-700 dark:text-stone-300">使用及执拿手势：</p>
-                      <p className="text-stone-605 dark:text-stone-400 leading-relaxed text-[11px] mt-0.5">{utensil.method}</p>
+                      <p className="font-semibold text-stone-300 text-stone-300">使用及执拿手势：</p>
+                      <p className="text-stone-605 text-stone-400 leading-relaxed text-[11px] mt-0.5">{utensil.method}</p>
                     </div>
 
                     <div>
-                      <p className="font-semibold text-stone-700 dark:text-stone-300">完美适配茶科：</p>
+                      <p className="font-semibold text-stone-300 text-stone-300">完美适配茶科：</p>
                       <div className="flex flex-wrap gap-1 mt-1">
                         {utensil.suitableTeas.map((t, idx) => (
-                          <span key={idx} className="px-2 py-0.2 rounded bg-stone-100 dark:bg-stone-800 text-stone-650 dark:text-stone-350 text-[10px] font-mono">
+                          <span key={idx} className="px-2 py-0.2 rounded bg-stone-100 bg-stone-800 text-stone-650 text-stone-350 text-[10px] font-mono">
                             {t}
                           </span>
                         ))}
                       </div>
                     </div>
 
-                    <div className="p-2.5 rounded-lg bg-teal-500/5 dark:bg-teal-950/10 border border-teal-500/10 text-[11px] text-stone-600 dark:text-stone-350">
-                      <span className="font-semibold text-teal-800 dark:text-teal-400 block mb-0.5">⚠️ 使用注意事项：</span>
+                    <div className="p-2.5 rounded-lg bg-teal-500/5 bg-teal-950/10 border border-teal-500/10 text-[11px] text-stone-400 text-stone-350">
+                      <span className="font-semibold text-teal-800 text-teal-400 block mb-0.5">⚠️ 使用注意事项：</span>
                       {utensil.notes}
                     </div>
                   </div>
@@ -566,11 +566,11 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
       {activeSubTab === 'storage' && (
         <div className="space-y-4 animate-fade-in" id="storage_panel_container">
           
-          <div className="p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-850 space-y-3 shadow-3xs">
-            <h3 className="font-serif text-sm font-bold text-stone-850 dark:text-stone-100 flex items-center gap-1.5">
+          <div className="p-4 rounded-xl bg-stone-900 bg-stone-900 border border-stone-800 border-stone-850 space-y-3 shadow-3xs">
+            <h3 className="font-serif text-sm font-bold text-stone-100 text-stone-100 flex items-center gap-1.5">
               <Archive className="w-4.5 h-4.5 text-orange-600" /> 年份沉淀：家庭储茶标准守则
             </h3>
-            <p className="text-xs text-stone-500 leading-relaxed">
+            <p className="text-xs text-stone-400 leading-relaxed">
               茶叶具有极高的物理吸水与吸异味性（含有大量疏松的多孔状结构及强吸收性茶多酚成分）。一旦保存不妥，极易变黄、受潮或走香变酸。
             </p>
           </div>
@@ -580,45 +580,45 @@ export const BrewingToolsView: React.FC<BrewingToolsViewProps> = ({
               return (
                 <div
                   key={idx}
-                  className="p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-150 dark:border-stone-800 space-y-3"
+                  className="p-4 rounded-xl bg-stone-900 bg-stone-900 border border-stone-800 border-stone-800 space-y-3"
                   id={`storage_guide_${idx}`}
                 >
-                  <div className="flex justify-between items-center border-b border-stone-100 dark:border-stone-850 pb-2">
-                    <h4 className="font-serif text-sm font-bold text-stone-900 dark:text-stone-100">
+                  <div className="flex justify-between items-center border-b border-stone-800 border-stone-850 pb-2">
+                    <h4 className="font-serif text-sm font-bold text-stone-100 text-stone-100">
                       {guide.category} 储存标准
                     </h4>
-                    <span className="text-[10px] uppercase font-mono bg-amber-500/10 text-amber-700 dark:bg-amber-950/20 dark:text-amber-400 px-2 py-0.5 rounded">
+                    <span className="text-[10px] uppercase font-mono bg-amber-500/10 text-amber-700 bg-amber-950/20 text-amber-400 px-2 py-0.5 rounded">
                       存新藏老
                     </span>
                   </div>
 
                   <div className="grid grid-cols-2 gap-2 text-xs mb-1">
-                    <div className="p-2.5 rounded bg-stone-50 dark:bg-stone-950/20 border border-stone-100 dark:border-stone-850">
-                      <p className="text-[10px] text-stone-400 dark:text-stone-350">最佳温控指标</p>
-                      <p className="font-semibold text-stone-700 dark:text-stone-300 mt-0.5">{guide.temp}</p>
+                    <div className="p-2.5 rounded bg-stone-950 bg-stone-950/20 border border-stone-800 border-stone-850">
+                      <p className="text-[10px] text-stone-400 text-stone-350">最佳温控指标</p>
+                      <p className="font-semibold text-stone-300 text-stone-300 mt-0.5">{guide.temp}</p>
                     </div>
-                    <div className="p-2.5 rounded bg-stone-50 dark:bg-stone-950/20 border border-stone-100 dark:border-stone-850">
-                      <p className="text-[10px] text-stone-400 dark:text-stone-350">推荐相对湿度</p>
-                      <p className="font-semibold text-stone-700 dark:text-stone-300 mt-0.5">{guide.humidity}</p>
+                    <div className="p-2.5 rounded bg-stone-950 bg-stone-950/20 border border-stone-800 border-stone-850">
+                      <p className="text-[10px] text-stone-400 text-stone-350">推荐相对湿度</p>
+                      <p className="font-semibold text-stone-300 text-stone-300 mt-0.5">{guide.humidity}</p>
                     </div>
                   </div>
 
                   <div className="space-y-3 text-xs">
                     <div>
-                      <p className="font-semibold text-stone-700 dark:text-stone-300">【核心存放工艺方案】</p>
-                      <p className="text-stone-605 dark:text-stone-350 leading-relaxed text-[11px] mt-0.5">{guide.method}</p>
+                      <p className="font-semibold text-stone-300 text-stone-300">【核心存放工艺方案】</p>
+                      <p className="text-stone-605 text-stone-350 leading-relaxed text-[11px] mt-0.5">{guide.method}</p>
                     </div>
 
                     <div>
-                      <p className="font-semibold text-stone-700 dark:text-stone-300">【关键储存准则】</p>
-                      <ul className="list-disc pl-4 space-y-1 mt-1 text-[11px] text-stone-605 dark:text-stone-400">
+                      <p className="font-semibold text-stone-300 text-stone-300">【关键储存准则】</p>
+                      <ul className="list-disc pl-4 space-y-1 mt-1 text-[11px] text-stone-605 text-stone-400">
                         {guide.milestones.map((m, mIdx) => (
                           <li key={mIdx}>{m}</li>
                         ))}
                       </ul>
                     </div>
 
-                    <div className="p-3 bg-rose-500/5 rounded-lg border border-rose-500/10 text-[11px] text-rose-800 dark:text-rose-400">
+                    <div className="p-3 bg-rose-500/5 rounded-lg border border-rose-500/10 text-[11px] text-rose-800 text-rose-400">
                       <span className="font-bold block mb-1 flex items-center gap-1">
                         <AlertTriangle className="w-3.5 h-3.5" /> 绝对存茶安全红线避忌：
                       </span>
